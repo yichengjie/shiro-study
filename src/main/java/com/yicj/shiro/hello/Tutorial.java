@@ -72,7 +72,7 @@ public class Tutorial {
     public  void test001(){
         //1.
         Factory<SecurityManager> factory = new IniSecurityManagerFactory(
-                "classpath:shiro.ini") ;
+                "classpath:shiro_helloworld.ini") ;
         //2.
         SecurityManager securityManager = factory.getInstance() ;
         //3.

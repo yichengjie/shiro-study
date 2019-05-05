@@ -19,12 +19,36 @@ public class Tutorial {
         tutorial.test001();
         tutorial.test002();
         tutorial.test003();
+        tutorial.test004();
         System.exit(0);
     }
 
 
+    public void test004(){
+        Subject currentUser = SecurityUtils.getSubject();
+        if (currentUser.isPermitted("lightsaber:weild")) {
+            log.info("You may use a lightsaber ring. Use it wisely.");
+        }else {
+            log.info("Sorry, lightsaber rings are for schwartz masters only.");
+        }
+
+        //test a typed permission (not instance-level)
+        if (currentUser.isPermitted("winnebago:drive:eagle5")) {
+            log.info("You are permitted to 'drive' the winnebago with license plate (id) 'eagle5'.  " +
+                    "Here are the keys - have fun!");
+        } else {
+            log.info("Sorry, you aren't allowed to drive the 'eagle5' winnebago!");
+        }
+        currentUser.logout();
+    }
+
+
+
     public void test003(){
         Subject currentUser = SecurityUtils.getSubject() ;
+        Session session = currentUser.getSession();
+        Object someKey = session.getAttribute("someKey");
+        log.info("someKey : " + someKey);
         if (currentUser.hasRole("schwartz")){
             log.info("May the Schwartz be with you !");
         }else {

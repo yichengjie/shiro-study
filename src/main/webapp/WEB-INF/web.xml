@@ -12,7 +12,24 @@
     <param-value>/WEB-INF/shiro.ini</param-value>
   </context-param>
   
-  <listener>
+  
+  <servlet>
+     <servlet-name>springmvc</servlet-name>
+     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+     <!-- 配置Spring mvc下的配置文件的位置和名称 -->
+     <init-param>
+         <param-name>contextConfigLocation</param-name>
+         <param-value>/WEB-INF/springmvc.xml</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+     <servlet-name>springmvc</servlet-name>
+     <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <!-- <listener>
     <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
   </listener>
   
@@ -28,6 +45,6 @@
      <dispatcher>FORWARD</dispatcher>
      <dispatcher>INCLUDE</dispatcher>
      <dispatcher>ERROR</dispatcher>
-   </filter-mapping>
+   </filter-mapping> -->
   
 </web-app>

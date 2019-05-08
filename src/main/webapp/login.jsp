@@ -3,12 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Insert title here</title>
 </head>
 <body>
-
-	<h1>登录页面</h1>
-
+   <form action="${pageContext.request.contextPath}/user/login" method="post">
+       userName:<input type="text" name="username" /><br/> 
+       passWord:<input type="password" name="password" /><br/> 
+       <input type="submit" value="登录"><br/>
+   </form>
 </body>
 </html>

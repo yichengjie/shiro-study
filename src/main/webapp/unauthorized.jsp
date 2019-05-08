@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>success page</h1>
+	<h2>无权限访问资源</h2>
 </body>
 </html>

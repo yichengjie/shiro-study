@@ -8,9 +8,10 @@
 </head>
 <body>
    <form action="${pageContext.request.contextPath}/user/login" method="post">
-       userName:<input type="text" name="username" /><br/> 
-       passWord:<input type="password" name="password" /><br/> 
+       userName:<input type="text" name="username"  autocomplete="new-password" /><br/> 
+       passWord:<input type="password" name="password"  autocomplete="new-password"/><br/> 
        <input type="submit" value="登录"><br/>
    </form>
+   ${requestScope.loginError}
 </body>
 </html>

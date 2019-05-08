@@ -1,7 +1,5 @@
 package com.yicj.shiro.controller;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.shiro.SecurityUtils;
@@ -29,9 +27,11 @@ public class UserController {
 			//认证成功跳转到成功页面
 			return "index" ;
 		} catch (Exception e) {
-			logger.error("认证失败", e);
-			response.sendRedirect(request.getContextPath() +"/login.jsp");
-			return null ;
+			request.setAttribute("loginError", "用户名或密码错误，请重新登录!");
+			/*request.getRequestDispatcher(request
+					.getContextPath() +"/login")
+					.forward(request, response);*/
+			return "login.jsp" ;
 		}
 	}
 

@@ -111,8 +111,31 @@
           <mainClass>com.yicj.shiro.hello.Tutorial</mainClass>
         </configuration>
       </plugin>
+
+     <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <!-- Config: contextPath and Port (Default:8080) -->
+        <configuration>
+            <update>true</update> <!-- 热部署 -->
+            <charset>utf-8</charset> <!-- 设置字符集 -->
+            <uriEncoding>UTF-8</uriEncoding><!-- 设置uri编码 -->
+            <port>8080</port> <!-- 设置端口 -->
+            <path>/shiro-study</path><!-- 设置默认访问应用的路径 -->
+            <url>http://127.0.0.1:8080/manager/text</url>
+        </configuration>
+        <executions>
+            <execution>
+                <phase>package</phase>
+                <goals>
+                     <goal>run</goal>
+                </goals>
+            </execution>
+        </executions>
+     </plugin>
       
-      <plugin>
+     <!-- <plugin>
           <groupId>org.mortbay.jetty</groupId>  
           <artifactId>jetty-maven-plugin</artifactId>  
           <version>8.1.15.v20140411</version> 
@@ -126,7 +149,7 @@
                   </connector>
               </connectors>
           </configuration>
-      </plugin>
+      </plugin>-->
     </plugins>
   </build>
 </project>

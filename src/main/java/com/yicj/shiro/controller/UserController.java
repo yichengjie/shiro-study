@@ -17,7 +17,7 @@ public class UserController {
 	private Logger logger = LoggerFactory.getLogger(UserController.class) ;
 	@PostMapping("/login")
 	public String login(String username, String password,
-			HttpServletRequest request,HttpServletResponse response) throws Exception {
+						HttpServletRequest request) throws Exception {
 		try {
 			Subject currentUser = SecurityUtils.getSubject();
 			UsernamePasswordToken token = 
@@ -25,13 +25,10 @@ public class UserController {
 			currentUser.login(token);
 			request.getSession().setAttribute("username", username);
 			//认证成功跳转到成功页面
-			return "index" ;
+			return "/index" ;
 		} catch (Exception e) {
 			request.setAttribute("loginError", "用户名或密码错误，请重新登录!");
-			/*request.getRequestDispatcher(request
-					.getContextPath() +"/login")
-					.forward(request, response);*/
-			return "login.jsp" ;
+			return "/login" ;
 		}
 	}
 

@@ -1,4 +1,4 @@
-package com.yicj.shiro.hello;
+package com.yicj.shiro.common;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;

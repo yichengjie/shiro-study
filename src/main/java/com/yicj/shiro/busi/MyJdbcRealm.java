@@ -1,4 +1,4 @@
-package com.yicj.shiro.hello;
+package com.yicj.shiro.busi;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -7,6 +7,9 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+
+import com.yicj.shiro.dao.UserDao;
+import com.yicj.shiro.entity.UserInfo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

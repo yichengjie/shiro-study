@@ -1,5 +1,7 @@
-import com.yicj.shiro.hello.ShiroHelper;
+package com.yicj.shiro.busi;
 import org.junit.Test;
+
+import com.yicj.shiro.common.ShiroHelper;
 
 public class ShrioJdbcTest {
 

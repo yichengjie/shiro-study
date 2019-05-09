@@ -1,4 +1,4 @@
-package com.yicj.shiro.hello;
+package com.yicj.shiro.common;
 
 import java.io.IOException;
 import java.io.InputStream;

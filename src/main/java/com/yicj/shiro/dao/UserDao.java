@@ -1,9 +1,12 @@
-package com.yicj.shiro.hello;
+package com.yicj.shiro.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import com.yicj.shiro.common.DbUtil;
+import com.yicj.shiro.entity.UserInfo;
 
 public class UserDao {
 

@@ -28,3 +28,14 @@ CREATE TABLE `members` (
 
 
 INSERT  INTO `members`(`id`,`userName`,`pass`) VALUES (1,'yicj','123');
+
+
+CREATE TABLE `members2` (
+  `id` INT(4) NOT NULL AUTO_INCREMENT,
+  `userName` VARCHAR(20) DEFAULT NULL,
+  `password` VARCHAR(100) DEFAULT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+
+INSERT  INTO `members2`(`id`,`userName`,`password`) VALUES (1,'yicj','123');

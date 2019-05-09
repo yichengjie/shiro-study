@@ -42,7 +42,7 @@
     </bean>
     
     <!-- 开启注解 -->
-<!--      <tx:annotation-driven transaction-manager="transactionManager"/> -->
+	<!--<tx:annotation-driven transaction-manager="transactionManager"/> -->
     
     
 </beans>

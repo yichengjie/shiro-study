@@ -5,6 +5,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.Assert;
 import org.apache.shiro.util.Factory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +33,7 @@ public class ShiroHelper {
         this.currentUser = SecurityUtils.getSubject();
     }
 
-    public  void checkLogin(String username,String password){
+    public void login(String username,String password){
         //使用shiro来进行登陆验证
         if(!this.currentUser.isAuthenticated()) {
             UsernamePasswordToken token=new UsernamePasswordToken(username,password);
@@ -44,6 +45,15 @@ public class ShiroHelper {
                 throw new RuntimeException(e) ;
             }
         }
+    }
+    
+    
+    public boolean checkLogined() {
+    	//断言用户已经登录
+        if(SecurityUtils.getSubject().isAuthenticated()) {
+        	return true ;
+        }
+        return false;
     }
 
 

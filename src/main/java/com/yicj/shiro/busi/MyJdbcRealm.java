@@ -27,7 +27,7 @@ public class MyJdbcRealm extends AuthorizingRealm {
     	//模拟从数据库获取到数据
     	List<String> permissions = new ArrayList<String>() ;
     	permissions.add("user:create") ;
-    	permissions.add("item:add") ;
+    	permissions.add("items:add") ;
     	//查到权限数据，返回授权信息(要包括上边的permissions)
     	SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo() ;
     	simpleAuthorizationInfo.addStringPermissions(permissions);
